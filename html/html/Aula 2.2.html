@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Sobre mim</title>
+  <style>
+  :root{
+    --bg:#f5fbf500; --ink:#112724; --muted:#634b4b;
+    --brand: #1e3b28; --card: #26b54f00;
+    --container: 800px;/* menor largura */
+    --radius: 100px;
+ }
+ body{background:var(--bg);color:var(--ink)}
+
+ .container{width:var(--container);margin:0 auto}
+
+ /* HEADER */
+  header{background:var(--brand);color:#ffffff;padding:14px}
+  .head{display:flex;justify-content:space-between;align-items:Graffiti}
+  .logo{font-weight:1000;font-size:19px}
+  nav a{color:#ffffffe0;text-decoration:none;margin-left:12px}
+  nav a:hover{text-decoration:underline}
+
+  /*SECTION*/
+  section{padding:24px}
+  h1{font-size:24px;margin:0 0 10px}
+  h2{font-size:20px;color:#0f172a;margin:0 0 10px}
+  p{margin:0 0 8px;color:var(--muted)}
+
+
+  /*SOBRE */
+  #sobre .wrap{display:grid;grid-template-columns:520px 240px;gap:20px;align-items:center}
+  #sobre img{width:240px;height:160px;object-fit:cover}
+
+  /* Galeria*/
+  .grid{display:grid;grid-template-columns:repeat(3,240px);gap:10px}
+  .grid img{width:240px;height:160px;object-fit:cover}
+
+      form{width:400px;background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:15px}
+    input,textarea{width:100%;margin:10px 0 10px;border:1px solid #cbd5e1;border-radius:6px;font:inherit}
+    button{width:100%;padding:10px;border:0;border-radius:6px;background:var(--brand);color:#fff;font-weight:700;cursor:pointer}
+    button:hover{filter:brightness(.9)}
+
+    footer{border-top:1px solid #1654ce;margin-top:20px;background:#ffffff}
+    .foot{display:flex;justify-content:space-between;align-items:center;padding:12px;color:var(--muted);font-size:14px}
+    .foot a{color:var(--muted);text-decoration:none}
+  
+  </style>
+</head>
+
+
+<body>
+  <header>
+  <div class="container head">
+  <div class="logo">Santhyago Santos</div>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#hobbies">hobbies</a>
+    <a href="#galeria">galeria</a>
+    <a href="#contacto">contacto</a>
+    </nav>
+  </div>
+  </header>
+
+
+  <section id="sobre">
+    <div class="container wrap">
+      <div>
+        <h1>Oie</h1>
+        <h2>Quem sou eu? Sou o Santh On</h2>
+        <p>O meu nome é <b>Santhaygo </b> e tenho 13 anos. Estou a aprender a jogar Fortnite!</p>
+      </div>
+    <div>
+      <img src="C:\Users\Santhyago Siqueira\Desktop\html\Porsche.jpg" alt="image"  width="200">
+    </div>
+    </div>
+    </section>
+
+    
+
+    <section id="hobbies">
+      <div class="container">
+          <h2>Hobbies</h2>
+           <ul>
+            <li>Amos andar de bicicleta</li>
+            <li>Não gosto de ler</li>
+            <li>Gosto de PC5 <em>fortnite</em></li>
+            <LI>Gosto de jogar Futebol</LI>
+  </ul>
+
+
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <h2>Galeria</h2>
+        <div class="grid">
+          <img src="C:\Users\Santhyago Siqueira\Desktop\html\asdsad5das65das65-6954904.jpg" alt="imagem 1">
+          <img src="C:\Users\Santhyago Siqueira\Desktop\html\most-overpowered-meta-decks-of-the-moment-a-pro-players-v0-rcsgifdqkiyd1.webp" alt="imagem 2">
+          <img src="C:\Users\Santhyago Siqueira\Desktop\html\ea-sports-fc-26-pc-ea-app-cover.jpg" alt="imagem 3">
+          <img src="C:\Users\Santhyago Siqueira\Desktop\html\FNBR_38-00_C6MS2_EGS_Launcher_FN_KeyArt_Blade_2560x1440_2560x1440-8527deb9952fab992dfabb7cdee48a54.jpg" alt="imagem 4">
+          <img src="C:\Users\Santhyago Siqueira\Desktop\html\lanborguini.jpg" alt="Imagem 5">
+          <img src="C:\Users\Santhyago Siqueira\Desktop\html\transferir.jpg" alt="Imagem 6">
+        </div>
+      </div>
+      </section>
+
+<section id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <p>© 2025 — Meu Site Pessoal</p>
+      <div><a href="#">Termos</a> · <a href="#">Privacidade</a></div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
+
+

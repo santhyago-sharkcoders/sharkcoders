@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Sobre mim</title>
+
+</head>
+
+<body>
+
+  <h1> Olaaaaaaaaaaaaaa</h1>
+
+  <h2>Quem sou eu? Sou o Santh</h2>
+
+  <p>O meu nome é <b>Santhaygo </b> e tenho 12 anos. Estou a aprender a jogar Fortnite<mark>HTML5</mark>!</p>
+
+ 
+
+  <h2>Lista de hobbies</h2>
+
+  <ul>
+
+    <li>Amo jogar</li>
+
+    <li>Não gosto de ler</li>
+
+    <li>Programar em <em>Python</em></li>
+
+  </ul>
+
+ 
+
+  <h2>Uma imagem que gosto</h2>
+
+ 
+
+  <p>Visita também o meu site favorito:</p>
+
+ 
+
+ 
+
+  <h2>Pequena curiosidade</h2>
+
+  <p>Sabia que o HTML significa <strong>HyperText Markup Language</strong>?</p>
+
+</body>
+
+</html>
+
+
