@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+            <title>Cálculo da Média</title>
+            <style>
+                 body {
+                    font-family: 𝓑𝓸𝓵𝓭 𝓢𝓬𝓻𝓲𝓹𝓽, sans-serif;
+                    margin-top: 60px;
+                    background-color: #0d0d99;
+
+                 }
+                label{color: #ffffff;
+                    font-family: "Times New Roman", Times, serif}
+        </style>
+
+    <body>
+        <h1>Cáculo da Média</h1>
+        <label>Nome do Aluno:</label>
+        <input type="text" id="nome"><br><br>
+
+        <label>Nota 1:</label>
+        <input type="number" id="nota1"><br><br>
+
+        <label>Nota 2:</label>
+        <input type="number" id="nota2"><br><br>
+
+        <input type="button" value="Calcular a Média"  onclick="registo()">
+
+        <h2 id="result"></h2>
+    </body>
+</html>
+
+<script>
+    function registo() {
+      const nome= document.getElementById('nome').value;
+      const nota1= Number(document.getElementById('nota1').value);
+      const nota2=Number(document.getElementById('nota2').value);
+
+      let media = (nota1+nota2)/2
+
+     result.innerHTML = "O aluno " + nome + " tem média " + media;
+
+     if (media >= 10) {
+        result.innerHTML += ". Aprovado!";
+        } else {
+            result.innerHTML += ".Reprovado!";
+
+            }
+    
+     }
+</script>
