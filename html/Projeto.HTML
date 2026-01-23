@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neymar Jr. - Perfil Profissional</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at top, #1b4b90, #0b1b2a 60%, #000);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    nav ul li a:hover {
+      opacity: 1;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      z-index: 1000;
+    }
+    .mobile-menu a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.9;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .hero h1 {
+      font-size: 58px;
+      letter-spacing: 3px;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+    .hero p {
+      margin-top: 15px;
+      font-size: 18px;
+      opacity: 0.8;
+    }
+    .hero .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .hero .btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: 36px;
+      letter-spacing: 2px;
+    }
+    .section-title p {
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: rgba(0,0,0,0.45);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .stat {
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .stat h3 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    .stat p {
+      opacity: 0.8;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .video {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .video:nth-child(1) { animation-delay: 0.2s; }
+    .video:nth-child(2) { animation-delay: 0.4s; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      opacity: 0.8;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 900px) {
+      .grid, .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hamburger {
+        display: flex;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Neymar Jr.</div>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#carreira">Carreira</a></li>
+      <li><a href="#titulos">Títulos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#videos">Vídeos</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+    <a href="#carreira" onclick="toggleMenu()">Carreira</a>
+    <a href="#titulos" onclick="toggleMenu()">Títulos</a>
+    <a href="#galeria" onclick="toggleMenu()">Galeria</a>
+    <a href="#videos" onclick="toggleMenu()">Vídeos</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Neymar Jr.</h1>
+    <p>O craque brasileiro que encanta o mundo com talento e magia em campo.</p>
+    <button class="btn" onclick="window.location.href='#sobre'">Ver mais</button>
+  </div>
+</section>
+
+<div class="container">
+
+  <section id="sobre" class="section-title">
+    <h2>Sobre Neymar</h2>
+    <p>Conheça um pouco mais sobre a história e trajetória do jogador.</p>
+  </section>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Quem é Neymar?</h3>
+      <p>
+        Neymar da Silva Santos Júnior é um dos maiores jogadores brasileiros da atualidade.
+        Iniciou sua carreira no Santos FC e rapidamente se tornou um ídolo nacional.
+        Seu estilo de jogo é marcado por dribles incríveis, velocidade e criatividade.
+      </p>
+      <img src="https://i.pinimg.com/736x/8e/c8/ed/8ec8ed033a729d97726850538ec5ad84.jpg" alt="Neymar">
+    </div>
+
+    <div class="card">
+      <h3>Trajetória</h3>
+      <p>
+        Neymar jogou no Santos, depois foi para o Barcelona, onde formou um ataque histórico.
+        Atualmente, ele é um dos principais jogadores do PSG e da seleção brasileira.
+      </p>
+      <img src="https://i.pinimg.com/736x/85/05/ef/8505efa3569bb2c75769faa0f5a6dc84.jpg" alt="Neymar em campo">
+    </div>
+  </div>
+
+  <section id="carreira" class="section-title">
+    <h2>Carreira</h2>
+    <p>Confira os clubes e momentos mais importantes.</p>
+  </section>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Santos FC</h3>
+      <p>Onde Neymar começou e se tornou estrela, ganhando diversos títulos e conquistando o Brasil.</p>
+      <img src="https://i.pinimg.com/736x/f1/09/1b/f1091b91f5919ca5617264c07d89bad9.jpg" alt="Neymar Santos">
+    </div>
+    <div class="card">
+      <h3>Barcelona</h3>
+      <p>No Barcelona, Neymar formou um ataque lendário e ganhou a Champions League.</p>
+      <img src="https://i.pinimg.com/736x/43/e9/31/43e9310c1b3b6282792128fea10d508d.jpg" alt="Neymar Barcelona">
+    </div>
+    <div class="card">
+      <h3>PSG</h3>
+      <p>No PSG, Neymar é destaque e continua sendo um dos jogadores mais influentes do mundo.</p>
+      <img src="https://i.pinimg.com/1200x/a3/19/8f/a3198f215d75b942efd6d8caf360b040.jpg" alt="Neymar PSG">
+    </div>
+    <div class="card">
+      <h3>Seleção Brasileira</h3>
+      <p>Craque da seleção, Neymar representa o Brasil em Copas do Mundo e torneios internacionais.</p>
+      <img src="https://i.pinimg.com/736x/49/e8/fe/49e8fe02fbedf44cf7890d7d021f5e34.jpg" alt="Neymar Brasil">
+    </div>
+  </div>
+
+  <section id="titulos" class="section-title">
+    <h2>Títulos</h2>
+    <p>Alguns dos principais títulos conquistados.</p>
+  </section>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Clubes</h3>
+      <p>
+        🏆 Copa Libertadores (Santos) <br>
+        🏆 Champions League (Barcelona) <br>
+        🏆 Ligue 1 (PSG) <br>
+      </p>
+    </div>
+    <div class="card">
+      <h3>Seleção</h3>
+      <p>
+        🏆 Copa das Confederações (Brasil) <br>
+        🏆 Medalha Olímpica (Ouro em 2016) <br>
+      </p>
+    </div>
+  </div>
+
+  <section id="galeria" class="section-title">
+    <h2>Galeria</h2>
+    <p>Fotos do craque em ação.</p>
+  </section>
+
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/82/5d/0c/825d0c261597987350dabee9df2b3eb7.jpg" alt="Neymar">
+    <img src="https://i.pinimg.com/736x/51/92/98/5192983d9263eeb25574f00fdbf233de.jpg" alt="Neymar em campo">
+    <img src="https://i.pinimg.com/736x/f0/34/32/f03432b77c94da45ebded6a1c9629484.jpg" alt="Neymar comemorando">
+    <img src="https://i.pinimg.com/736x/df/ea/32/dfea326994cc9a3649d526b6b072299d.jpg" alt="Neymar Barcelona">
+    <img src="https://i.pinimg.com/1200x/78/4c/3f/784c3f6fbc3ae7b5deb6afcfefa75afd.jpg" alt="Neymar PSG">
+    <img src="https://i.pinimg.com/736x/06/ec/96/06ec96dbcb63cdd9684d65beeb608954.jpg" alt="Neymar Brasil">
+  </div>
+
+  <section id="videos" class="section-title">
+    <h2>Vídeos</h2>
+    <p>Melhores lances e momentos.</p>
+  </section>
+
+  <div class="video-grid">
+    <div class="video">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/2Q7QJ1J7L5E"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/4u4XzvJ3YvE"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 - Página feita com estilo profissional
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
+
+</body>
+</html>
